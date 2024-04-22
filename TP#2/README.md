@@ -23,7 +23,9 @@ Asi tambien se propone, continuar el aprendizaje del uso de herramientas de simu
 
 tales como Tinkercad o Proteus. 
 
-De esta actividad tambien se disparan necesidades de recolectar informacion a fin de comprender el funcionamiento de cada componente
+De esta actividad tambien se disparan necesidades de recolectar informacion a fin de comprender el
 
-asi como tambien la neceidad de aprender el uso de simuladores y comprender los resultados que arrojan.
+ funcionamiento de cada componente asi como tambien la neceidad de aprender el uso de simuladores
+ 
+  y comprender los resultados que arrojan.
  
