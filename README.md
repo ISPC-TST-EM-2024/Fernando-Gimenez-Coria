@@ -7,7 +7,7 @@ Alumno: Fernando Gimenez Coria
 ### **Presentacion de la estructura de monorepositorio**
 TP#1 Fundamentos de circuitos electricos - 14/4/2024
 
-TP#1 Simulación Electrónica - 21/4/2024
+TP#2 Simulación Electrónica - 21/4/2024
 
 ## **Resumen de repositorio actual TP#2**
  **Objetivos**
