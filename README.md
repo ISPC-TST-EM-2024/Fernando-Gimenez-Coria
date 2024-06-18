@@ -1,5 +1,5 @@
 # LOGO
-![alt text](../rsc/visuales/LOGO.png)
+![alt text](./rsc/visuales/LOGO.png)
 
 ## Profesor: Gonzalo Vera
 
@@ -45,7 +45,7 @@
  2. Completar el código provisto en el entrenador básico PIC16f648, de manera que el display haga el conteo de 0 a 9. Se permite utilizar como delay la instrucción nop.
 
  Realizar los Ejercicios 1 y 2 utilizando esta guía y la plantilla vista en clases.
-<center><img src="../rsc/visuales/plantilla_entrenador.png" width="800"></center>
+<center><img src="./rsc/visuales/plantilla_entrenador.png" width="800"></center>
 
 
 
@@ -65,4 +65,4 @@ Cada Trabajo Práctico se almacena segun la siguiente estructura:
 
 # **Perfil del Alumno**
 
-<center><img src="../rsc/visuales/Currículum FGC.png" width="800"></center>
+<center><img src="./rsc/visuales/Currículum FGC.png" width="800"></center>
