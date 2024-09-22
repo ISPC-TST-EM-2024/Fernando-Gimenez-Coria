@@ -116,9 +116,9 @@ void loop() {
 ```
 Estas librerías son fundamentales para configurar la funcionalidad BLE del ESP32:
 
-`BLEDevice.h`: Controla la configuración y gestión del dispositivo BLE.
-`BLEServer.h`: Se utiliza para configurar el ESP32 como servidor BLE.
-`BLEUtils.h`: Proporciona utilidades adicionales relacionadas con BLE.
+`BLEDevice.h`: Controla la configuración y gestión del dispositivo BLE.  
+`BLEServer.h`: Se utiliza para configurar el ESP32 como servidor BLE.  
+`BLEUtils.h`: Proporciona utilidades adicionales relacionadas con BLE.  
 `BLECharacteristic.h`: Permite crear características BLE que el cliente puede leer o escribir, según sea necesario.  
 
 ### 2. Definición del pin del LED y UUIDs
@@ -130,8 +130,8 @@ Estas librerías son fundamentales para configurar la funcionalidad BLE del ESP3
 #define CHARACTERISTIC_UUID_READ "12345678-1234-1234-1234-123456789014"  
 ```
   
-`LED_PIN`: Define el pin donde está conectado el LED en el ESP32 (en este caso, es el LED integrado en el pin 2).
-`SERVICE_UUID`: Este UUID identifica el servicio que el ESP32 ofrecerá. Un servicio BLE agrupa características relacionadas. En este caso, estamos creando un servicio para controlar y monitorear el LED.
+`LED_PIN`: Define el pin donde está conectado el LED en el ESP32 (en este caso, es el LED integrado en el pin 2). 
+`SERVICE_UUID`: Este UUID identifica el servicio que el ESP32 ofrecerá. Un servicio BLE agrupa características relacionadas. En este caso, estamos creando un servicio para controlar y monitorear el LED.  
 `CHARACTERISTIC_UUID_WRITE y CHARACTERISTIC_UUID_READ`: Estos UUIDs identifican las dos características que definimos para este servicio:  
 
 - `CHARACTERISTIC_UUID_WRITE`: Permite que un cliente (por ejemplo, un smartphone) envíe comandos de control (escritura) al ESP32.
@@ -145,7 +145,7 @@ BLECharacteristic *pCharacteristicRead;
 bool ledState = false;  
 ```  
 
-`pCharacteristicWrite` y `pCharacteristicRead`: Estas variables apuntan a las características que usaremos para escribir comandos al ESP32 y leer el estado del LED.
+`pCharacteristicWrite` y `pCharacteristicRead`: Estas variables apuntan a las características que usaremos para escribir comandos al ESP32 y leer el estado del LED.  
 `ledState`: Variable booleana que guarda el estado del LED (encendido o apagado). Esto será útil para enviar el estado al cliente cuando se solicite.  
 
 ### 4. Clase para Manejar los Comandos (MyCallbacks)
@@ -174,10 +174,10 @@ class MyCallbacks : public BLECharacteristicCallbacks {
     }
 };  
 ```
-`MyCallbacks`: Es una clase derivada de BLECharacteristicCallbacks que define el comportamiento que ocurre cuando el cliente escribe datos en la característica.
-`onWrite()`: Esta función se llama cuando el cliente escribe algo en la característica de escritura. La lógica dentro de esta función controla el LED:
-`Recibir el valor`: El valor que recibe el ESP32 es un string (por ejemplo, "1" o "0").
-`Encender/Apagar LED`: Si el valor es "1", enciende el LED. Si es "0", lo apaga.
+`MyCallbacks`: Es una clase derivada de BLECharacteristicCallbacks que define el comportamiento que ocurre cuando el cliente escribe datos en la característica.  
+`onWrite()`: Esta función se llama cuando el cliente escribe algo en la característica de escritura. La lógica dentro de esta función controla el LED:  
+`Recibir el valor`: El valor que recibe el ESP32 es un string (por ejemplo, "1" o "0").  
+`Encender/Apagar LED`: Si el valor es "1", enciende el LED. Si es "0", lo apaga.  
 `Actualizar la característica de lectura`: Después de cambiar el estado del LED, actualiza el valor de la característica de lectura para reflejar si el LED está encendido o apagado (enviando "1" o "0").  
 
 ### 5. Función setup()
@@ -216,17 +216,17 @@ void setup() {
   Serial.println("Servidor BLE iniciado");
 }  
 ```
-`Serial.begin(115200)`: Inicia la comunicación serial para que puedas ver los mensajes de depuración en el monitor serial.
-`pinMode(LED_PIN, OUTPUT)`: Configura el pin del LED como una salida.
-`BLEDevice::init("ESP32_LED_Control")`: Inicializa el ESP32 como un dispositivo BLE con el nombre "ESP32_LED_Control", que será visible desde un smartphone.
-`BLEServer *pServer = BLEDevice::createServer()`: Crea un servidor BLE en el ESP32.
+`Serial.begin(115200)`: Inicia la comunicación serial para que puedas ver los mensajes de depuración en el monitor serial.  
+`pinMode(LED_PIN, OUTPUT)`: Configura el pin del LED como una salida.  
+`BLEDevice::init("ESP32_LED_Control")`: Inicializa el ESP32 como un dispositivo BLE con el nombre "ESP32_LED_Control", que será visible desde un smartphone.  
+`BLEServer *pServer = BLEDevice::createServer()`: Crea un servidor BLE en el ESP32.  
 `pService->createService(SERVICE_UUID)`: Crea un servicio con el UUID especificado.  
 
 ## Características:
-`pCharacteristicWrite`: Se define una característica que permite al cliente escribir datos (comandos para encender/apagar el LED). Se asigna el callback MyCallbacks para manejar las escrituras.
-`pCharacteristicRead`: Se define una característica de solo lectura, que se inicializa con el valor "0" (LED apagado).
-`pService->start()`: Inicia el servicio BLE.
-`BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();`: Comienza a anunciar el dispositivo BLE, haciéndolo visible para los clientes cercanos (por ejemplo, un smartphone con una aplicación BLE).
+`pCharacteristicWrite`: Se define una característica que permite al cliente escribir datos (comandos para encender/apagar el LED). Se asigna el callback MyCallbacks para manejar las escrituras.  
+`pCharacteristicRead`: Se define una característica de solo lectura, que se inicializa con el valor "0" (LED apagado). 
+`pService->start()`: Inicia el servicio BLE.  
+`BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();`: Comienza a anunciar el dispositivo BLE, haciéndolo visible para los clientes cercanos (por ejemplo, un smartphone con una aplicación BLE).  
 `Serial.println("Servidor BLE iniciado")`: Muestra un mensaje en el monitor serial indicando que el servidor BLE ha sido iniciado correctamente.
 ### 6. Función loop()
 ```cpp
@@ -235,7 +235,8 @@ void loop() {
   // No se necesita código adicional aquí, ya que todo se maneja por callbacks.
 }  
 ```
-El `loop()` está vacío porque el servidor BLE y los callbacks gestionan la comunicación automáticamente. No se necesita escribir código adicional en el loop().
+El `loop()` está vacío porque el servidor BLE y los callbacks gestionan la comunicación automáticamente. No se necesita escribir código adicional en el loop().  
+
 ## Resumen de cómo funciona el código:
 ### Servidor BLE:
 El ESP32 se configura como un servidor BLE que puede aceptar conexiones desde dispositivos BLE como un smartphone.
