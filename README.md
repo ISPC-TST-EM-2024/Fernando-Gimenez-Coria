@@ -19,36 +19,40 @@
 
 ## TP#6: Práctica con PIC16F84A  
 
-## TP#10: Entrenador basico PIC16F648A
+## TP#10: Entrenador basico PIC16F648A  
+  
+## TP#20: Comunicación y Preprocesamiento  
 
 ## Actualmente trabajando en 
-## TP#10: Entrenador basico PIC16F648A
+## TP#20: Comunicación y Preprocesamiento
 
-# **Resumen de repositorio actual TP#10**
+# **Resumen de repositorio actual TP#20**
 
 **Objetivos**
 
-1. Familiarizarse con un entorno de desarrollo de bajo nivel.
+1. Familiarizarse con las tecnologías de los módulos de comunicación incorporados en el ESP32.
 
-2. Introducir las primeras practicas con micros PIC de 8 bit.
-
-
-3. Introducción a las primeras instrucciones en assembler.
-
-
-4. Realizar desarrollos básicos con el PIC16F648.
+2. Conocer las librerías asociadas a cada modulo de comunicación para el ESP32 incluidas en el framework Arduino.
 
  **Desarrollo del trabajo práctico**  
 
- 1. Identificar la palabra de configuración y explicar que representa cada fusible. 
+- Realizar los siguientes ejercicios según se solicita a continuación, dejar los registros de desarrollo en el repositorio personal de la materia, con la estructura ABP de trabajo habitual.
+  
+## Serie de practicas WiFi con ESP32  
 
- 2. Completar el código provisto en el entrenador básico PIC16f648, de manera que el display haga el conteo de 0 a 9. Se permite utilizar como delay la instrucción nop.
+### - Práctica 1: Conexión Básica a una Red Wi-Fi y Monitorización de Estado  
+### - Práctica 2: Configurar el ESP32 como Punto de Acceso (AP)  
+### - Práctica 3: Servidor Web Simple con Wi-Fi  
+### - Práctica 4: Cliente HTTP para Enviar Datos a un Servidor  
 
- Realizar los Ejercicios 1 y 2 utilizando esta guía y la plantilla vista en clases.
-<center><img src="./rsc/visuales/plantilla_entrenador.png" width="800"></center>
+## Serie de Prácticas Bluetooth con el ESP32    
+### - Práctica 1: Comunicación Serial con Bluetooth Clásico (SPP)  
+### - Práctica 2: Comunicación BLE Básica - Anunciado y Conexión  
+### - Práctica 3: Comunicación BLE - Servicios y Características  
+### - Práctica 4: Notificaciones BLE  
+### - Práctica 5: Comunicación Bidireccional BLE - Control Remoto  
 
-
-
+ 
 # Organización de la estructura del repositorio
 
 Cada Trabajo Práctico se almacena segun la siguiente estructura:
