@@ -190,15 +190,15 @@ void setup() {
   Serial.println("Servidor HTTP iniciado");
 }  
 ```
-**Serial.begin(115200):** Inicia la comunicación serie para poder monitorear el proceso de conexión a la red y la operación del servidor desde el monitor serie.
-**pinMode(ledPin, OUTPUT):** Configura el pin 2 como salida para poder controlar el LED.
-**digitalWrite(ledPin, LOW):** Asegura que el LED esté apagado cuando el sistema arranca.
-**WiFi.begin(ssid, password):** Inicia el proceso de conexión a la red Wi-Fi con las credenciales proporcionadas.
-**while (WiFi.status() != WL_CONNECTED):** Espera hasta que el ESP32 se conecte a la red Wi-Fi, mostrando un mensaje cada segundo.
-**server.on("/", handleRoot):** Asocia la ruta / (página principal) con la función handleRoot, que genera la página web con los botones.
-**server.on("/on", handleLedOn):** Asocia la ruta /on para encender el LED.
-**server.on("/off", handleLedOff):** Asocia la ruta /off para apagar el LED.
-**server.begin():** Inicia el servidor web.  
+`Serial.begin(115200):` Inicia la comunicación serie para poder monitorear el proceso de conexión a la red y la operación del servidor desde el monitor serie.
+`pinMode(ledPin, OUTPUT):` Configura el pin 2 como salida para poder controlar el LED.
+`digitalWrite(ledPin, LOW):` Asegura que el LED esté apagado cuando el sistema arranca.
+`WiFi.begin(ssid, password):` Inicia el proceso de conexión a la red Wi-Fi con las credenciales proporcionadas.
+`while (WiFi.status() != WL_CONNECTED):` Espera hasta que el ESP32 se conecte a la red Wi-Fi, mostrando un mensaje cada segundo.
+`server.on("/", handleRoot):` Asocia la ruta / (página principal) con la función handleRoot, que genera la página web con los botones.
+`server.on("/on", handleLedOn):` Asocia la ruta /on para encender el LED.
+`server.on("/off", handleLedOff):` Asocia la ruta /off para apagar el LED.
+`server.begin():` Inicia el servidor web.  
 
 ### 9. Gestión de Solicitudes en loop()
 ```cpp
